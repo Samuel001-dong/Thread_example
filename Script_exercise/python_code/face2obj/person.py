@@ -61,7 +61,7 @@ class Singer(Person):
 
     def make_money(self):
         print(f"{self.name} makes many money")
-        return 1000
+        return 2000
 
 
 singer1 = Singer(name="董建龙", gender="男", age=20, skill="唱歌")
