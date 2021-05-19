@@ -1,0 +1,18 @@
+# 不同环境下的初始化电量及对应的目标里程数
+data1: &data1
+  env: "测试环境"
+  battery: 10
+  km: 120
+
+data2: &data2
+  env: "开发环境"
+  battery: 10
+  km: 100
+
+data3: &data3
+  env: "线上环境"
+  battery: 10
+  km: 99
+
+default:
+  <<: *data1

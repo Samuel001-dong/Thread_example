@@ -10,7 +10,7 @@ import sys
 
 import yaml
 # yaml.safe_load()   # 将yaml格式转换为Python的对象
-# yaml.safe_dump()
+# yaml.safe_dump()   # 将python对象存储为yaml格式
 
 
 with open("./data.yml") as f:
