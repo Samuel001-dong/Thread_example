@@ -10,6 +10,7 @@
 通过传入的骑行里程数,显示骑行结果(就是当电量耗尽,需要你真正骑的里程数)
 )
 """
+import yaml
 
 
 class Bicycle:
@@ -31,14 +32,21 @@ class EBicycle(Bicycle):
         print(f"当前电量为{self.battery_level}度")
 
     def run(self, km):
+        print(f"客户目标里程:{km}km")
         miles = km - self.battery_level*10
         if miles > 0:
             print("电量不够.....")
+            print(f"电行里程数:{self.battery_level*10}km")
             Bicycle.run(miles)
         else:
             print("电量充足,不需要骑行")
 
 
-e1 = EBicycle(4)
-e1.fill_charge(5)
-e1.run(100)
+with open("../Data/bicycle_data.yml", encoding='utf-8') as f:  # windows的默认编码格式是gbk,想要中文能识别需将编码格式改为utf-8
+    data_all = yaml.safe_load(f)
+print(data_all)
+data = data_all['default']
+print(data['env'])
+e1 = EBicycle(data['battery'])
+# # e1.fill_charge(5)
+e1.run(data['km'])
