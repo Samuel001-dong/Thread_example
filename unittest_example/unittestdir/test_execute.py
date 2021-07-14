@@ -17,6 +17,7 @@ unittest执行测试用例
         匹配某个目录下所有以test开头的py文件，执行这些文件下的所有测试用例
         test_dir = "./test_case"
         discover = unittest.defaultTestLoader.discover(test_dir,pattern = 'test*.py')
+        unittest.TextTestRunner().run(discover)
             discover可以一次调用多个脚本
             test_dir被测试脚本的路径
             pattern脚本名称匹配规则

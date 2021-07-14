@@ -29,7 +29,7 @@
 3、测试框架结构：
     setUp用来为测试准备环境，tearDown用来清理环境
     如果想要在所有case(同一个类)执行之前准备一次环境，并在所有case执行结束之后再清理环境，我们可以用setUpClass()与tearDownClass();比如数据库连接及销毁
-    setUp和tearDown每个用例前后都会执行一次，setUpClass和tearDownClass会在每个类前后执行以溪
+    setUp和tearDown每个用例前后都会执行一次，setUpClass和tearDownClass会在每个类前后执行一次
     如果想有些方法不在本次执行使用@unittest.skip
     测试方法的命名：以test开头
     各种执行-单一用例，全部
